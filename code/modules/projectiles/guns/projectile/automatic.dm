@@ -487,7 +487,7 @@ obj/item/weapon/gun/projectile/wwi/bolt/proc/bolt(mob/M as mob)
 		chambered = AC
 	update_icon()
 
-/obj/item/weapon/gun/projectile/wwi/bolt/proc/load_from_box(var/obj/item/ammo_box/box,var/mob/user)
+/obj/item/weapon/gun/projectile/wwi/bolt/load_from_box(var/obj/item/ammo_box/box,var/mob/user)
 	if(box.contents.len == 0 || isnull(box.contents.len))
 		to_chat(user,"<span class ='notice'>The [box.name] is empty!</span>")
 		return
@@ -610,7 +610,7 @@ obj/item/weapon/gun/projectile/wwi/lever/proc/lever(mob/M as mob)
 
 	update_icon()
 
-/obj/item/weapon/gun/projectile/wwi/lever/proc/load_from_box(var/obj/item/ammo_box/box,var/mob/user)
+/obj/item/weapon/gun/projectile/wwi/lever/load_from_box(var/obj/item/ammo_box/box,var/mob/user)
 	if(box.contents.len == 0 || isnull(box.contents.len))
 		to_chat(user,"<span class ='notice'>The [box.name] is empty!</span>")
 		return

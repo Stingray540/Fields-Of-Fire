@@ -163,7 +163,7 @@
 	/obj/item/weapon/gun/projectile/shotgun/pump/m90_ts = 4,
 	/obj/item/weapon/gun/projectile/m739_lmg/lmg30cal = 1,
 	/obj/item/weapon/gun/projectile/ma5b_ar/MA3 = 8,
-	/obj/item/ammo_box/heavysniper = 2,
+	//obj/item/ammo_box/heavysniper = 2,
 	/obj/item/ammo_magazine/m762_ap/MA3 = 16,
 	/obj/item/ammo_magazine/m95_sap = 10,
 	/obj/item/ammo_magazine/m5 = 24,
