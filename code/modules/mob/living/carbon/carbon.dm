@@ -7,6 +7,8 @@
 
 	if (!default_language && species_language)
 		default_language = all_languages[species_language]
+
+	my_hygiene_factor = (rand(HYGIENE_FACTOR_LOWEST*100, HYGIENE_FACTOR_HIGHEST*100))/100
 	..()
 
 /mob/living/carbon/Life()

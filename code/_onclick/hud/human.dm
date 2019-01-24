@@ -270,6 +270,13 @@
 	mymob.radio_use_icon.color = ui_color
 	mymob.radio_use_icon.alpha = ui_alpha
 
+	mymob.happiness_icon = new /obj/screen()
+	mymob.happiness_icon.name = "mood"
+	mymob.happiness_icon.icon = ui_style
+	mymob.happiness_icon.icon_state = "mood4"
+	mymob.happiness_icon.screen_loc = ui_happiness
+	hud_elements |= mymob.happiness_icon
+
 	mymob.client.screen = list()
 
 	mymob.client.screen += hud_elements

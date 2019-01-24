@@ -625,6 +625,9 @@
 			silent = 0
 			return 1
 
+		handle_happiness()
+		handle_hygiene()
+
 		if(hallucination)
 			if(hallucination >= 20 && !(species.flags & (NO_POISON|IS_PLANT)) )
 				if(prob(3))

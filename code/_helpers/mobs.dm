@@ -298,3 +298,6 @@ proc/age2agedescription(age)
 				selected = M
 				break
 	return selected
+
+/mob/living/carbon/human/proc/is_nude()
+	return (!w_uniform) ? 1 : 0
