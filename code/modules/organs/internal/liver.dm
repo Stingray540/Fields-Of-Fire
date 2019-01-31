@@ -114,3 +114,6 @@
 				to_chat(owner, "<span class='warning'>You fall down because of your thirst.</span>")
 				owner.Weaken(1)
 				owner.Stun(1)
+			if(prob(10))
+				to_chat(owner, "<span class='warning'>You lick around your mouth as a craving for water sets in.</span>")
+				take_damage(1)

@@ -299,7 +299,7 @@
 		msg += "[T.He] [T.is] repulsively uncanny!\n"
 
 //EXTRA ON EXAMINE SHIT
-	if(happiness <= MOOD_LEVEL_SAD2)
+	if(happiness <= MOOD_LEVEL_SAD2 && !skipface)
 		msg += "<span class='warning'>[T.He] looks sad.</span>\n"
 
 	if(hasHUD(user,"security"))
