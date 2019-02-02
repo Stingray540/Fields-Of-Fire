@@ -186,6 +186,10 @@
 			var/washears = 1
 			var/washglasses = 1
 
+			if(H.is_nude())
+				H.set_hygiene(HYGIENE_LEVEL_CLEAN)
+				H.add_event("shower", /datum/happiness_event/nice_shower) //i love me a shower
+
 			if(H.wear_suit)
 				washgloves = !(H.wear_suit.flags_inv & HIDEGLOVES)
 				washshoes = !(H.wear_suit.flags_inv & HIDESHOES)

@@ -339,6 +339,10 @@
 			if(usr.client)
 				usr.client.drop_item()
 
+		if("mood")
+			var/mob/living/carbon/C = usr
+			C.print_happiness(C)
+
 		if("module")
 			if(isrobot(usr))
 				var/mob/living/silicon/robot/R = usr

@@ -586,6 +586,10 @@
 						for(var/datum/wound/W in E.wounds)
 							if (W.wound_damage() == 0 && prob(50))
 								E.wounds -= W
+			if(prob(20) && nutrition < 20) // not eating = bad for you
+				for(var/obj/item/organ/internal/heart/I in internal_organs)
+					to_chat(src, "<span class='warning'>Your heart aches as your stomach rumbles.</span>")
+					I.take_damage(2)
 
 	// TODO: stomach and bloodstream organ.
 	if(!isSynthetic())
@@ -624,6 +628,9 @@
 			blinded = 1
 			silent = 0
 			return 1
+
+		handle_happiness()
+		handle_hygiene()
 
 		if(hallucination)
 			if(hallucination >= 20 && !(species.flags & (NO_POISON|IS_PLANT)) )

@@ -30,3 +30,10 @@
 	//the second is the message in question.
 	var/last_taste_time = 0
 	var/last_taste_text = ""
+
+	//The great depression
+	var/happiness = 0
+	var/datum/happiness_event/list/events = list()
+	var/thirst = THIRST_LEVEL_FILLED
+	var/hygiene = HYGIENE_LEVEL_NORMAL
+	var/my_hygiene_factor = HYGIENE_FACTOR

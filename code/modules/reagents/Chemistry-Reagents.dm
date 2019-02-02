@@ -33,6 +33,8 @@
 	var/glass_desc = "It's a glass of... what, exactly?"
 	var/list/glass_special = null // null equivalent to list()
 
+	var/quench_amount = 1
+
 /datum/reagent/proc/remove_self(var/amount) // Shortcut
 	holder.remove_reagent(type, amount)
 
@@ -89,6 +91,7 @@
 	return
 
 /datum/reagent/proc/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	M.adjust_thirst(quench_amount)
 	affect_blood(M, alien, removed * 0.5)
 	return
 
