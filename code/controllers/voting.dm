@@ -245,10 +245,18 @@ datum/controller/vote
 										spawn(10)
 											autotransfer()
 				if("map")
-					var/datum/map/M = GLOB.all_maps[.[1]]
-					fdel("use_map")
-					text2file(M.path, "use_map")
+					var/new_map = .[1]
+					var/status_quo = "Do not switch"
 
+					if(new_map == status_quo)
+						return
+
+				 	to_world("<span class='danger'>>World restarting to \'[new_map]\' map due to mapswitch vote...</span>")
+					feedback_set_details("end_error","map vote")
+					log_game("Rebooting due to mapswitch vote")
+
+					sleep(50)
+					switch_maps(new_map)
 		if(mode == "gamemode") //fire this even if the vote fails.
 			if(!round_progressing)
 				round_progressing = 1
@@ -259,7 +267,8 @@ datum/controller/vote
 			to_world("World restarting due to vote...")
 
 			feedback_set_details("end_error","restart vote")
-			if(blackbox)	blackbox.save_all_data_to_sql()
+			if(blackbox)
+				blackbox.save_all_data_to_sql()
 			sleep(50)
 			log_game("Rebooting due to restart vote")
 			world.Reboot()
@@ -352,8 +361,24 @@ datum/controller/vote
 				if("map")
 					if(!config.allow_map_switching)
 						return 0
-					for(var/name in GLOB.all_maps)
-						choices.Add(name)
+					
+					var/status_quo = "Do not switch"
+					//var/list/map_options = list()
+
+					choices = list()
+					var/list/Lines = file2list("switchable_maps")
+
+					if(!Lines)
+						to_world("ERROR: unable to find \'switchable_maps\'")
+
+					for(var/t in Lines)
+						if(t)
+							choices.Add(t)
+					choices.Add(status_quo)
+					
+					for(var/option in choices)
+						choices[option] = 0
+
 				if("custom")
 					question = sanitizeSafe(input(usr,"What is the vote for?") as text|null)
 					if(!question)	return 0
