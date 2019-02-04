@@ -30,6 +30,15 @@
 	ignore_equipment_threshold = 2
 	slowdown = 1
 
+	pain_scream_sounds = list(\
+	'code/modules/halo/sounds/species_pain_screams/gruntscream_1.ogg',
+	'code/modules/halo/sounds/species_pain_screams/gruntscream_2.ogg',
+	'code/modules/halo/sounds/species_pain_screams/gruntscream_3.ogg',
+	'code/modules/halo/sounds/species_pain_screams/gruntscream_4.ogg',
+	'code/modules/halo/sounds/species_pain_screams/gruntscream_5.ogg',
+	'code/modules/halo/sounds/species_pain_screams/gruntscream_6.ogg',
+	'code/modules/halo/sounds/species_pain_screams/gruntscream_7.ogg')
+
 /datum/species/unggoy/create_organs(var/mob/living/carbon/human/H)
 	. = ..()
 	//I guess their leg-boots are kinda organs.
