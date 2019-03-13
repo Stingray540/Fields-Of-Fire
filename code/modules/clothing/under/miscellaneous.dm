@@ -1,4 +1,4 @@
-#define WWI_OVERRIDE 'icons/FoF/clothes.dmi'
+#define WWI_OVERRIDE 'icons/FoF/clothing/clothes.dmi'
 
 /obj/item/clothing/under/pj/red
 	name = "red pj's"
