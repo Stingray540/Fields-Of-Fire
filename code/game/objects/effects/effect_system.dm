@@ -163,7 +163,7 @@ steam.start() -- spawns the effect
 
 /obj/effect/effect/smoke
 	name = "smoke"
-	icon_state = "smoke"
+	icon_state = "grenadesmoke"
 	opacity = 1
 	anchored = 0.0
 	mouse_opacity = 0
@@ -271,7 +271,7 @@ steam.start() -- spawns the effect
 
 /obj/effect/effect/smoke/mustard
 	name = "mustard gas"
-	icon_state = "mustard"
+	icon_state = "gas"
 
 /obj/effect/effect/smoke/mustard/Move()
 	..()
