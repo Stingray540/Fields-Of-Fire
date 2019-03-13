@@ -46,5 +46,16 @@ else
     fi
 fi
 
+while true; do
+    read -p "Cannot find DM executable: if it is in a non-standard location, enter it now:" input
+    if [[ -e $input && -f $input ]]; then
+        export DM="${input}"
+        return 0
+    else
+        echo "Not a valid path"
+        break
+    fi
+done
+
 export DM=''
 return 1
